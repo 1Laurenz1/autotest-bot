@@ -1,3 +1,9 @@
+"""
+Module for logging software actions
+
+Модуль для логгирования действий софта
+"""
+
 from loguru import logger
 from pathlib import Path
 
@@ -5,8 +11,10 @@ from pathlib import Path
 logs_dir = Path("logs")
 logs_dir.mkdir(exist_ok=True)
 
+# Remove default log handlers
 logger.remove()
 
+# Console logging with color
 logger.add(
     sink=lambda msg: print(msg, end=""),
     colorize=True,
@@ -16,6 +24,7 @@ logger.add(
            "<level>{message}</level>"  
 )
 
+# File logging with rotation and retention
 logger.add(
     logs_dir / "software_logs.log",
     rotation="5 MB",

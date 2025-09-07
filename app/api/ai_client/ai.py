@@ -4,6 +4,8 @@ Service for interacting with OpenAI API
 Сервис для взаимодействия с OpenAI API
 """
 
+import re
+
 from openai import AsyncOpenAI
 from typing import Optional, List, Union
 
@@ -25,14 +27,16 @@ class AIService:
         self.model = model
         
         logger.info(f'The AIService initialized with the model: {self.model}')
-        
-        
+
+    
     async def ask(
         self, text: str,
         system_prompt: str = (
             "You are a helpful assistant. "
             "For each question, choose only one of the four options given to you. "
-            "Do not invent other options. Respond only with the chosen letter. "  
+            "If you see answer options - respond with just one letter."
+            "But if you don't see the options for answers, you need to come up with a brief response to the question."
+            "Do not invent extra information. "
         ),
         **kwargs
         ) -> str:
@@ -43,7 +47,6 @@ class AIService:
         :param kwargs: Additional parameters for the OpenAI API call (like temperature, max_tokens, etc.)
         :return: Response text from the AI, stripped of leading/trailing whitespace.
         """
-
         try:
             response = await self.client.chat.completions.create(
                 model=self.model,
@@ -68,7 +71,7 @@ class AIService:
     async def choose_options(
         self,
         text: str,
-        options: Union[str | List[str]],
+        options: Union[str, List[str]],
         temperature: float = 0.2
     ) -> str:
         """

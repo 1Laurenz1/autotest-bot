@@ -5,7 +5,7 @@ OCR Service for text recognition from screenshots.
 """
 
 from pathlib import Path
-from typing import Optional, Protocol, List
+from typing import Optional, Protocol, List, Tuple
 
 from app.core import logger
 
@@ -47,7 +47,7 @@ class OCRService:
 
         os.makedirs(self.folder_path, exist_ok=True)
         logger.info(f"OCRService initialized, folder: {self.folder_path}")
-        
+    
         
     async def save_screenshot(self, filename: str = "screenshot.png") -> Path:
         if self.screenshot_tool is None:
@@ -91,8 +91,8 @@ class OCRService:
         except Exception as e:
             logger.exception(f"OCR failed for {image_path}")
             raise RuntimeError("OCR failed") from e
-
-
+        
+    
 screenshot_tool = PILScreenshotTool()
 ocr_engine = PytesseractEngine()
 

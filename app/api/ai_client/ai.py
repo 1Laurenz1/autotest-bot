@@ -4,8 +4,6 @@ Service for interacting with OpenAI API
 Сервис для взаимодействия с OpenAI API
 """
 
-import re
-
 from openai import AsyncOpenAI
 from typing import Optional, List, Union
 
@@ -47,6 +45,7 @@ class AIService:
         :param kwargs: Additional parameters for the OpenAI API call (like temperature, max_tokens, etc.)
         :return: Response text from the AI, stripped of leading/trailing whitespace.
         """
+        
         try:
             response = await self.client.chat.completions.create(
                 model=self.model,

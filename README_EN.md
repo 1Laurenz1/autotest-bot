@@ -1,3 +1,5 @@
+[EN](README_EN.md) | [RU](README_RU.md)
+
 # Autotest Bot
 
 Automation of online test completion for distance learning.
@@ -26,11 +28,9 @@ The project is designed for use with Python and allows you to:
 
 ### 3. Activate the virtual environment
 
-
     .venv\Scripts\Activate.ps1
 
 ### 4. Install dependencies
-
 
     pip install -r requirements.txt
 
@@ -44,7 +44,7 @@ The project is designed for use with Python and allows you to:
 
 Run the main script:
 
-python -m app.run
+    python -m app.run
 
 ---
 
@@ -67,13 +67,10 @@ python -m app.run
 ## ⚠️ Important
 
 - This project is intended only for personal and educational use.
-Do not use it to bypass rules of educational platforms. [EN]
-
-- Проект предназначен только для личного использования и учебных целей.
-Не используйте его для обхода правил образовательных платформ. [RU]
+Do not use it to bypass rules of educational platforms.
 
 ---
 
 ## 📄 License
 
-MIT License
+This project is covered by the MIT license.

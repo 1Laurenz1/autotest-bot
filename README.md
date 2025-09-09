@@ -1,4 +1,4 @@
-[EN](README.md) | [RU](README_RU.md)
+# 🌐 Languages: [EN](README.md) | [RU](README_RU.md)
 
 # Autotest Bot
 
@@ -12,6 +12,17 @@ The project is designed for use with Python and allows you to:
 - Emulate user actions (mouse clicks, keyboard input)
 
 - Easily extend and customize for new platforms
+
+---
+
+## Table of Contents
+
+1. [Installation](#-Installation)
+2. [Usage](#-Usage)
+3. [Examples](#-examples)
+4. [Technologies](#-Technologies)
+5. [Important Notes](#-Important)
+6. [License](#-License)
 
 ---
 
@@ -36,7 +47,7 @@ The project is designed for use with Python and allows you to:
 
 ### 5. Create a .env file with your API key
 
-    OPENAI_API_KEY=ваш_ключ
+    OPENAI_API_KEY=your_openai_api_key_here
 
 ---
 
@@ -48,6 +59,42 @@ Run the main script:
 
 ---
 
+The bot will:
+
+1. Take screenshots of the test questions.
+
+2. Recognize text using OCR.
+
+3. Ask GPT to provide correct answers.
+
+4. Automatically click/select answers.
+
+
+## Examples
+
+Example screenshot text:
+
+    Question: Who is the author of "The Tale of Igor's Campaign"?
+    A) Ivan Franko
+    B) Lesya Ukrainka
+    C) Mykhailo Kotsiubynsky
+    D) Taras Shevchenko
+
+    AI chooses option:
+    D
+
+---
+
+
+Example without options:
+
+    Question: Summarize the following text: "Ukraine declared independence in 1991..."
+
+    AI response:
+    Ukraine became an independent country in 1991.
+
+
+--- 
 ## Technologies
 
 - Python 3.11+
@@ -61,6 +108,8 @@ Run the main script:
 - openai (GPT API)
 
 - SQLAlchemy + SQLite/PostgreSQL (optional)
+
+**See requirements.txt for exact versions.**
 
 ---
 

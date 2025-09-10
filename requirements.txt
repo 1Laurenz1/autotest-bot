@@ -1,25 +1,13 @@
-# OCR
 pytesseract==0.3.10
-
-# Обработка изображений
 Pillow==9.5.0
 opencv-python==4.8.1.78
-
-# Эмуляция мыши и клавиатуры
 pyautogui==0.9.53
 pynput==1.7.6
-
-# Работа с API нейронки
-openai==1.8.0
-
-# Работа с БД
+openai==1.106.1
 SQLAlchemy==2.0.26
-
-# Утилиты и логирование
 colorama==0.4.6
 loguru==0.7.3
-
-# Работа с моделями данных
-pydantic==2.11.7
-pydantic_core==2.33.2
+pydantic==2.7.0
+pydantic_core==2.18.1
 pydantic-settings==2.10.1
+python-dotenv==1.1.1

@@ -1,4 +1,4 @@
-# 🌐 Языки: [English](README_EN.md) | [Русский](README_RU.md)
+# 🌐 Языки: [English](README.md) | [Русский](README_RU.md)
 
 # Autotest Bot
 

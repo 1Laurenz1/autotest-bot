@@ -64,7 +64,12 @@ class OCRService:
 
         def _make_screenshot():
             screenshot = self.screenshot_tool.screenshot()
-            screenshot.save(screenshot_path)
+            
+            top_crop = 100
+            width, height = screenshot.size
+            cropped_screenshot = screenshot.crop((0, top_crop, width, height))
+            
+            cropped_screenshot.save(screenshot_path)
 
         await asyncio.to_thread(_make_screenshot)
         logger.info(f"Screenshot saved: {screenshot_path}")

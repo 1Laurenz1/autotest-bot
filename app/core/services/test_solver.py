@@ -29,3 +29,27 @@ class TestSolver:
         self.yellow_button = yellow_button
         self.blue_button = blue_button
         self.green_button = green_button
+        
+    
+    async def recognize_and_click(
+        self,
+        ai_answer: str,
+    ) -> bool:
+
+        if ai_answer == "A":
+            pyautogui.click(self.red_button)
+            logger.info("Clicked RED button (A)")
+        elif ai_answer == "B":
+            pyautogui.click(self.yellow_button)
+            logger.info("Clicked YELLOW button (B)")
+        elif ai_answer == "C":
+            pyautogui.click(self.blue_button)
+            logger.info("Clicked BLUE button (C)")
+        elif ai_answer == "D":
+            pyautogui.click(self.green_button)
+            logger.info("Clicked GREEN button (D)")
+        else:
+            logger.warning(f"Не удалось сопоставить AI ответ: {ai_answer}")
+            return False
+
+        return True

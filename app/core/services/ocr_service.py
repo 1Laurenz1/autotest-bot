@@ -65,7 +65,7 @@ class OCRService:
         def _make_screenshot():
             screenshot = self.screenshot_tool.screenshot()
             
-            top_crop = 100
+            top_crop = 200
             width, height = screenshot.size
             cropped_screenshot = screenshot.crop((0, top_crop, width, height))
             
